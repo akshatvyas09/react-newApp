@@ -65,7 +65,7 @@ pipeline {
 
                 docker run -d \
                 --name react-container \
-                -p 3000:80 \
+                -p 5173:80 \
                 admin10987/react-newapp:latest
                 '''
             }
