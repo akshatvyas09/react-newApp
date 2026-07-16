@@ -50,7 +50,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 sh '''
-                docker push admin10987/react-newapp:latest'
+                docker push admin10987/react-newapp:latest
 
                 '''
             }
