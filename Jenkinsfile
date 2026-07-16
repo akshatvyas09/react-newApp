@@ -29,46 +29,5 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
-
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t admin10987/react-newapp:latest .'
-            }
-        }
-
-
-        stage('Docker Login') {
-            steps {
-                sh '''
-                docker login -u admin10987 -p Vyasji@5676
-                '''
-            }
-        }
-
-
-        stage('Docker Push') {
-            steps {
-                sh '''
-                docker push admin10987/react-newapp:latest
-
-                '''
-            }
-        }
-
-
-        stage('Deploy Container') {
-            steps {
-                sh '''
-                docker stop react-container || true
-                docker rm react-container || true
-
-                docker run -d \
-                --name react-container \
-                -p 5173:80 \
-                admin10987/react-newapp:latest
-                '''
-            }
-        }
     }
 }
