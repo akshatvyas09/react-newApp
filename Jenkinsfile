@@ -41,7 +41,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 sh '''
-                docker login -u admin10987 -p $DOCKER_PASSWORD
+                docker login -u admin10987 -p Vyasji@5676
                 '''
             }
         }
